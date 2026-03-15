@@ -4,18 +4,13 @@ import { useState } from "react";
 import useFetch from "../utils/useFetch";
 
 function Header() {
-  const products=useFetch()
-  const [filteredProducts,setFilteredProducts]=useState([])
-  function handleSearchText(searchedText){
-    setFilteredProducts(products.filter((product)=>product.title.toLowerCase().includes(searchedText.toLowerCase())))
-  }
-
+  
   return (
     <header className="header">
       <h2 className="logo">ShoppyGlobe</h2>
 
       <input
-        onChange={(e)=>handleSearchText(e.target.value)} className="search"
+        className="search"
         type="text"
         placeholder="Search products..."
       />
