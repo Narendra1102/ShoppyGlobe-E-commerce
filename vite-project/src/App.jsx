@@ -2,14 +2,20 @@
 import Header from "./Components/Header"
 import Footer from "./Components/Footer"
 import { Outlet } from "react-router-dom"
+import store from "./utils/store"
+import { Provider } from 'react-redux'
+
 
 function App(){
   return(
-    <>
-      <Header />
-      <Outlet/>
-      <Footer/>
-    </>
+    <Provider store={store}>
+      <div>
+        <Header />
+        <Outlet/>
+        <Footer/>
+      </div>
+    </Provider>
+    
   )
 }
 
