@@ -1,16 +1,97 @@
-# React + Vite
+# 🛒 ShoppyGlobe - E-commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShoppyGlobe is a modern and responsive e-commerce web application built using **React, Redux, and Vite**. It allows users to browse products, search items, add them to the cart,remove from the cart and proceed to checkout with a smooth user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* 🔍 **Search Products** (Redux-powered filtering)
+* 🛒 **Add to Cart / Remove from Cart**
+* ➕ **Update Quantity**
+* 💰 **Cart Total Calculation**
+* 📦 **Checkout Page**
+* ⚡ **Lazy Loading for Performance**
+* ❌ **404 Error Page**
+* 📱 **Fully Responsive Design (Mobile + Tablet + Desktop)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧑‍💻 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** React.js, Vite
+* **State Management:** Redux Toolkit
+* **Routing:** React Router
+* **Styling:** CSS (Flexbox + Responsive Design)
+
+---
+
+## 📂 Project Structure
+
+
+src/
+│── Components/
+│   ├── Home.jsx
+│   ├── Header.jsx
+│   ├── ProductList.jsx
+│   ├── ProductItem.jsx
+│   ├── ProductDetail.jsx
+│   ├── Cart.jsx
+│   ├── CartItem.jsx
+│   ├── Checkout.jsx
+│   ├── NotFound.jsx
+│   ├── Footer.jsx
+│
+│── utils/
+│   ├── store.js
+│   ├── cartSlice.js
+│   ├── searchSlice.js
+│   ├── useFetch.js
+│
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+
+git clone https://github.com/Narendra1102/ShoppyGlobe-E-commerce.git
+
+
+
+---
+
+### 2️⃣ Install Dependencies
+
+
+npm install
+
+
+---
+
+### 3️⃣ Run the Project
+
+npm run dev
+
+
+👉 Open in browser:
+
+
+http://localhost:5173
+
+
+## 🛒 Usage
+
+* Browse products on the home page
+* Use the search bar to filter products
+* Click "Add to Cart" to add items
+* Visit Cart page to update/remove items
+* Proceed to Checkout page to place order
+
+
