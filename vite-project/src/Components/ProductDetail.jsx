@@ -1,6 +1,8 @@
 
 import { useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../utils/cartSlice'
 
 
 
@@ -36,6 +38,11 @@ function ProductDetail() {
     return <h2>Failed to fetch data</h2>
   }
 
+  const dispatch=useDispatch()
+  function handleAddItem(product){
+    dispatch(addToCart(product))
+  }
+
   return (
     <div className="product-details">
       <div className="product-image">
@@ -47,10 +54,8 @@ function ProductDetail() {
         <p>{product.description}</p>
         <h4>${product.price}</h4>
         <div className='btn-container'>
-          <button className="cart-btn">Add to Cart</button>
+          <button onClick={()=>handleAddItem(product)} className="cart-btn">Add to Cart</button>
         </div>
-        
-
       </div>
       
     </div>
