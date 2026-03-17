@@ -1,10 +1,21 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
-import useFetch from "../utils/useFetch";
+import { useDispatch, useSelector } from "react-redux";
+import store from "../utils/store";
+import { setSearch } from "../utils/searchSlice";
+
 
 function Header() {
   
+  const dispatch=useDispatch()
+
+  const cartItems=useSelector((store)=>store.cart.items)
+
+  function handleSearch(searchedText){
+    dispatch(setSearch(searchedText))
+  }
+
   return (
     <header className="header">
       <h2 className="logo">ShoppyGlobe</h2>
@@ -13,15 +24,20 @@ function Header() {
         className="search"
         type="text"
         placeholder="Search products..."
-      />
-
+        onChange={(e)=>handleSearch(e.target.value)}/>
+        
       <nav className="navbar">
         <Link to="/" style={{ textDecoration: "none",color:"white"}}>Home</Link>
         
-        <Link to="/checkout" style={{ textDecoration: "none",color:"white",marginLeft:"40px"}}>Checkout</Link>
-        <Link to="/cart" style={{ textDecoration: "none",color:"white",marginLeft:"40px"}}>
-           <FaShoppingCart/>
+        <Link to="/cart" className="cart-link">
+           <FaShoppingCart />
+           {cartItems.length > 0 && (
+              <span className="cart-count">
+                {cartItems.length}
+              </span>
+            )}
         </Link>
+        <Link to="/cart" style={{textDecoration:"none",color:"white"}}>Cart</Link>
       </nav>
     </header>
   );
