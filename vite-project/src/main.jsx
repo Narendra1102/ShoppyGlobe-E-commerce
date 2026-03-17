@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -6,7 +5,7 @@ import React from 'react'
 import { lazy, Suspense } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 const Home = React.lazy(()=>import("./Components/Home"))
-const Cart = React.lazy(()=>import("./Components/Cart"))
+const Cart=React.lazy(()=>import("./Components/Cart.jsx"))
 const ProductDetail = React.lazy(()=>import("./Components/ProductDetail"))
 const Checkout = React.lazy(()=>import("./Components/Checkout"))
 const NotFound = React.lazy(()=>import("./Components/NotFound"))
