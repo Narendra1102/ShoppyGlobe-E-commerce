@@ -1,7 +1,8 @@
 import { Link, useRouteError } from "react-router-dom";
 
 function NotFound() {
-    const err=useRouteError()
+   // Get error details from React Router
+  const err=useRouteError()
     
   return (
     <div className="error-container">
@@ -9,10 +10,12 @@ function NotFound() {
 
       <h2 className="error-title">Oops! Page Not Found</h2>
 
+      {/* Display error message from router */}
       <p className="error-text">
         {err.data}
       </p>
 
+      {/* Button to navigate back to home page */}
       <Link to="/">
         <button className="home-btn">Go Back Home</button>
       </Link>

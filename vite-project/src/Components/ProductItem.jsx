@@ -10,8 +10,9 @@ function ProductItem({product}){
     }
 
     return (
-        
+        // Navigate to product detail page when card is clicked
         <Link to={`/product/${product.id}`} style={{ textDecoration: "none"}}>
+            
             <div className="product-card">
                 <img src={product.images[0]} alt="img" loading="lazy" width="200px" height="200px"/>
                 <div className="product-det">

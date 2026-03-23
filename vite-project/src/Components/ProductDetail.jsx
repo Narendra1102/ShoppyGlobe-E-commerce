@@ -7,11 +7,14 @@ import { addToCart } from '../utils/cartSlice'
 
 
 function ProductDetail() {
-
+  // Get product id from URL
   const {id}=useParams()
+
+  // State to store fetched product details
   const [product,setProduct]=useState({})
   const [error,setError]=useState("")
   
+  // Fetch product details when component mounts or id changes
   useEffect(()=>{
     async function calling(){
       try{
@@ -33,12 +36,14 @@ function ProductDetail() {
     return <h2>Loading...</h2>
   }
   
-  
+  // Show error message if fetch fails
   if(error){
     return <h2>Failed to fetch data</h2>
   }
 
   const dispatch=useDispatch()
+  
+  // Add selected product to cart
   function handleAddItem(product){
     dispatch(addToCart(product))
   }

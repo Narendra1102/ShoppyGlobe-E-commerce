@@ -8,8 +8,11 @@ function Checkout(){
   const items = useSelector(state => state.cart.items);
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const dispatch = useDispatch()
+
+  // Initialize navigation hook
   const navigate = useNavigate()
 
+   // Function to handle order placement
   function placeOrder(e){
     e.preventDefault()
 
@@ -50,7 +53,7 @@ function Checkout(){
           ))
         )}
         
-
+        {/* Total price section */}
         <div className="summary-item total">
           <span>Total</span>
           <span>${total.toFixed(2)}</span>

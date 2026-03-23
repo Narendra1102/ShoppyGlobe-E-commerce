@@ -12,6 +12,7 @@ function Header() {
 
   const cartItems=useSelector((store)=>store.cart.items)
 
+  // Dispatch search text to Redux state
   function handleSearch(searchedText){
     dispatch(setSearch(searchedText))
   }
@@ -37,6 +38,8 @@ function Header() {
               </span>
             )}
         </Link>
+        
+        {/* Cart text link */}
         <Link to="/cart" style={{textDecoration:"none",color:"white"}}>Cart</Link>
       </nav>
     </header>

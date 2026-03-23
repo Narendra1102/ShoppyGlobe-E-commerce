@@ -4,13 +4,15 @@ import App from './App.jsx'
 import React from 'react'
 import { lazy, Suspense } from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+
+// Lazy load page components for better performance
 const Home = React.lazy(()=>import("./Components/Home"))
 const Cart=React.lazy(()=>import("./Components/Cart.jsx"))
 const ProductDetail = React.lazy(()=>import("./Components/ProductDetail"))
 const Checkout = React.lazy(()=>import("./Components/Checkout"))
 const NotFound = React.lazy(()=>import("./Components/NotFound"))
 
-//React routing configuration
+// React Router configuration
 const router = createBrowserRouter([
   { 
     path:"/",
@@ -29,6 +31,7 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
+  // Suspense fallback shown while lazy-loaded components are loading
   <Suspense fallback={<h2>Loading...</h2>}>
     <RouterProvider router={router}/>
   </Suspense>

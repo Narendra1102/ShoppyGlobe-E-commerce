@@ -8,9 +8,11 @@ import { Provider } from 'react-redux'
 
 function App(){
   return(
+    // Provide Redux store to the entire application
     <Provider store={store}>
       <div>
         <Header />
+        {/* Outlet renders the matched child route component */}
         <Outlet/>
         <Footer/>
       </div>
